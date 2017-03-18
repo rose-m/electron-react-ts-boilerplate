@@ -26,8 +26,14 @@ gulp.task('build:js', () => {
       .pipe(uglify())
       .pipe(gulp.dest('dist'));
 });
+gulp.task('build:js:dev', () => {
+  return project.src()
+    .pipe(project())
+    .js
+    .pipe(gulp.dest('dist'));
+});
 gulp.task('watch:js', () => {
-  gulp.watch(['main.ts', 'app/**/*.ts', 'app/**/*.tsx'], ['build:js']);
+  gulp.watch(['main.ts', 'app/**/*.ts', 'app/**/*.tsx'], ['build:js:dev']);
 });
 
 /* ============= STYLES ============
@@ -36,7 +42,7 @@ gulp.task('build:css', () => {
   return gulp.src('app/styles/**/*.scss')
     .pipe(sass().on('error', sass.logError))
     .pipe(gulp.dest('dist/styles'));
-})
+});
 gulp.task('watch:css', () => {
   gulp.watch('app/**/*.scss', ['build:css']);
 });
@@ -54,6 +60,6 @@ gulp.task('watch:resources', () => {
 /* =========== DEFAULTS ===========
 ==================================== */
 gulp.task('build', ['build:html', 'build:js', 'build:css', 'build:resources']);
-gulp.task('watch', ['watch:html', 'watch:js', 'watch:css', 'watch:images']);
+gulp.task('watch', ['watch:html', 'watch:js', 'watch:css', 'watch:resources']);
 
 gulp.task('default', ['build']);

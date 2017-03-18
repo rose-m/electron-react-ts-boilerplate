@@ -1,39 +1,39 @@
-import { app, BrowserWindow } from 'electron';
+import {app, BrowserWindow} from 'electron';
 
 let win;
 
 function createWindow() {
-  win = new BrowserWindow({
-    width:800,
-    height: 600,
-    autoHideMenuBar: true,
-  });
+    win = new BrowserWindow({
+        width: 800,
+        height: 600,
+        autoHideMenuBar: true,
+    });
 
-  /**
-   * Entry point for application.
-   */
-  win.loadURL(`file://${__dirname}/index.html`);
+    /**
+     * Entry point for application.
+     */
+    win.loadURL(`file://${__dirname}/index.html`);
 
-  /**
-    * Developer Tools Extensions
-   */
-  BrowserWindow.addDevToolsExtension(`${__dirname}/../devtools/react`);
+    /**
+     * Developer Tools Extensions
+     */
+    BrowserWindow.addDevToolsExtension(`${__dirname}/../devtools/react`);
 
-  win.on('closed', () => {
-    window = null;
-  });
+    win.on('closed', () => {
+        win = null;
+    });
 }
 
 app.on('ready', createWindow);
 
 app.on('window-all-closed', () => {
-  if (process.platform !== 'darwin') {
-    app.quit();
-  }
+    if (process.platform !== 'darwin') {
+        app.quit();
+    }
 });
 
 app.on('activate', () => {
-  if (window === null) {
-    createWindow();
-  }
+    if (win === null) {
+        createWindow();
+    }
 });

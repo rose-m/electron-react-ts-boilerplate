@@ -8,7 +8,7 @@ export default class IntroComponent extends React.Component<MyProps, MyState> {
     return (
       <div className="introduction">
         <h1>Welcome to your brand new app!</h1>
-        <p>Now you can create awesome desktop applications using <strong>TypeScript2.0</strong> and <strong>ReactJS</strong>.</p>
+        <p>Now you can create awesome desktop applications using <strong>TypeScript2.x</strong> and <strong>ReactJS</strong>.</p>
         <img className="logo" src="resources/images/react-and-ts.png" />
       </div>
     );
