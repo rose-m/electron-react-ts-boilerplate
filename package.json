@@ -1,8 +1,8 @@
 {
   "name": "electron-react-ts-boilerplate",
   "version": "1.0.1",
-  "repository": "ibrahimduran/electron-react-ts-boilerplate",
-  "description": "Boilerplate for developing Electron apps using TypeScript2.0 and ReactJS.",
+  "repository": "rose-m/electron-react-ts-boilerplate",
+  "description": "Boilerplate for developing Electron apps using TypeScript2.x and ReactJS.",
   "keywords": [
     "electron",
     "typescript",
@@ -11,7 +11,7 @@
     "reactjs"
   ],
   "bugs": {
-    "url": "https://github.com/ibrahimduran/electron-react-ts-boilerplate/issues"
+    "url": "https://github.com/rose-m/electron-react-ts-boilerplate/issues"
   },
   "main": "dist/main.js",
   "scripts": {
